@@ -2,11 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>devCodeCamp &middot; Most Wanted</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <title>Most Wanted</title>
   </head>
   <body>
-    <button onclick="app(data)">Start Searching</button>
+    <header>devCodeCamps Most Wanted List</header>
+    <div>
+      <form id="nameForm">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value=""><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value=""><br>
+  
+      <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
+
+  </form>
+
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
+
+
+
+
+
+    <!-- <button onclick="app(data)">Start Searching</button> -->
+
