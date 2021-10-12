@@ -4,6 +4,8 @@
 
 let firstNameInput = document.forms['nameForm']['fname'].value;
 let lastNameInput = document.forms['nameForm']['lname'].value;
+let genderInput = document.forms[ 'nameForm']['gender'].value;
+
 
 let headers = ['First Name', 'Last Name'];
 
@@ -54,11 +56,31 @@ function searchByLastName(lastNameArray){
     return filteredLastName;
 }
 
+// Gender search
+function searchByGender(filteredGenderArray){
+  genderInput = document.forms[ 'nameForm']['gender'].value;
+  let filteredGender = filteredGenderArray.filter(function(person) {
+      if(person.gender == genderInput){
+          return true;
+      }
+      return false;
+  });
+      if(filteredGender.length > 0){
+          console.log(filteredGender);
+
+      }else{
+          alert("Sorry that is not a gender");
+      }
+      return filteredGender;
+}
+
 // main search function
 
 function mainSearchFunction(){
     firstNameInput = document.forms['nameForm']['fname'].value;
     lastNameInput = document.forms['nameForm']['lname'].value;
+    genderInput = document.forms[ 'nameForm']['gender'].value;
+
 
 
     let results = people;
@@ -72,6 +94,10 @@ function mainSearchFunction(){
         results = searchByLastName(results);
 
     }
+    if(genderInput.length > 1) {
+      results = searchByGender(results);
+  
+      }
 
 
     console.log(results);

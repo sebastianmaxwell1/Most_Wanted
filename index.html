@@ -12,6 +12,8 @@
       <input type="text" id="fname" name="fname" value=""><br>
       <label for="lname">Last name:</label><br>
       <input type="text" id="lname" name="lname" value=""><br>
+      <label for="lname">Gender:</label><br>
+      <input type="text" id="gender" name="gender" value=""><br>
   
       <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
 
@@ -35,8 +37,10 @@
           let id = row.insertCell(-1);
           let firstName = row.insertCell(0);
           let lastName = row.insertCell(1);
+          let  gender = row.insertCell(2)
           firstName.innerHTML = document.getElementById("fName").value;
           lastName.innerHTML = document.getElementById("lName").value;
+          gender.innerHTML =document.getElementById("gender").value;
   
           
           return false;
