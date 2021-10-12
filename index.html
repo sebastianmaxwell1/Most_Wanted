@@ -8,12 +8,14 @@
     <header>devCodeCamps Most Wanted List</header>
     <div>
       <form id="nameForm">
-      <label for="fname">First name:</label><br>
+      <label for="fname">First Name:</label><br>
       <input type="text" id="fname" name="fname" value=""><br>
-      <label for="lname">Last name:</label><br>
+      <label for="lname">Last Name:</label><br>
       <input type="text" id="lname" name="lname" value=""><br>
       <label for="lname">Gender:</label><br>
       <input type="text" id="gender" name="gender" value=""><br>
+      <label for="dob">Date of Birth:</label><br>
+      <input type="text" id="dob" name="dob" value="xx/xx/xxxx"><br>
   
       <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
 
@@ -37,10 +39,12 @@
           let id = row.insertCell(-1);
           let firstName = row.insertCell(0);
           let lastName = row.insertCell(1);
-          let  gender = row.insertCell(2)
+          let  gender = row.insertCell(2);
+          let dob = row.insertCell(3);
           firstName.innerHTML = document.getElementById("fName").value;
           lastName.innerHTML = document.getElementById("lName").value;
           gender.innerHTML =document.getElementById("gender").value;
+          dob.innerHTML - document.getElementById("dob").value;
   
           
           return false;
@@ -52,13 +56,6 @@
   </body>
 </html>
 
-
-
-
-
-  <!-- <div id="filteredTable">
-  </div>
-  <div id="myTable"></div> -->
 
     <!-- <button onclick="app(data)">Start Searching</button> -->
 

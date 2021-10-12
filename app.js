@@ -5,6 +5,7 @@
 let firstNameInput = document.forms['nameForm']['fname'].value;
 let lastNameInput = document.forms['nameForm']['lname'].value;
 let genderInput = document.forms[ 'nameForm']['gender'].value;
+let dobInput = document.forms['nameForm']['dob'].value;
 
 
 let headers = ['First Name', 'Last Name'];
@@ -74,12 +75,31 @@ function searchByGender(filteredGenderArray){
       return filteredGender;
 }
 
+// DOB search
+function searchByDob(dobArray){
+  dobInput = document.forms[ 'nameForm']['dob'].value;
+  let filteredDob = dobArray.filter(function(person){
+      if(person.dob == dobInput){
+          return true;
+      }
+      return false;
+  });
+      if(filteredDob.length > 0){
+          console.log(filteredDob);
+      }else{
+         alert('Nobody with that date of birth found. Please enter another birthdate.');
+      }
+      return filteredDob;
+}
+
+
 // main search function
 
 function mainSearchFunction(){
     firstNameInput = document.forms['nameForm']['fname'].value;
     lastNameInput = document.forms['nameForm']['lname'].value;
     genderInput = document.forms[ 'nameForm']['gender'].value;
+    dobInput = document.forms['nameForm']['dob'].value;
 
 
 
@@ -98,6 +118,9 @@ function mainSearchFunction(){
       results = searchByGender(results);
   
       }
+    if(dobInput.length > 1) {
+      results = searchByDob(results);
+    }
 
 
     console.log(results);
