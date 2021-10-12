@@ -24,7 +24,7 @@ function searchByFirstName(firstNameArray){
 
     // Rather than console logging, you need to append the filteredPeople to a table.
     if(filteredFirstName.length > 0){
-        // console.log(filteredFirstName);
+        console.log(filteredFirstName);
 
     }else{
         alert('Sorry, looks like there is no one with that First Name.');
@@ -46,7 +46,7 @@ function searchByLastName(lastNameArray){
 
     // Rather than console logging, you need to append the filteredPeople to a table.
     if(filteredLastName.length > 0){
-        // console.log(filteredLastName);
+        console.log(filteredLastName);
 
     }else{
         alert('Sorry there is no one with that Last Name');
@@ -74,7 +74,7 @@ function mainSearchFunction(){
     }
 
 
-    // console.log(results);
+    console.log(results);
     createTableWithResults(results);
 }
 

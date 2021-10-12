@@ -16,10 +16,33 @@
       <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
 
   </form>
-   <!-- <div id="filteredTable">
-  </div>
-  <div id="myTable"></div> -->
 
+    <table id="filteredTable">
+      <tr>
+        <!-- <th>First Name</th>
+        <th>Last Name</th> -->
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+            
+      document.getElementById("submit").onclick=function()
+      {
+          document.getElementById("filteredTable").style.display="block";
+          
+          let table = document.getElementById("filteredTable");
+          let row = table.insertRow(-2);
+          let id = row.insertCell(-1);
+          let firstName = row.insertCell(0);
+          let lastName = row.insertCell(1);
+          firstName.innerHTML = document.getElementById("fName").value;
+          lastName.innerHTML = document.getElementById("lName").value;
+  
+          
+          return false;
+      }
+  
+  </script>    
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
@@ -28,6 +51,10 @@
 
 
 
+
+  <!-- <div id="filteredTable">
+  </div>
+  <div id="myTable"></div> -->
 
     <!-- <button onclick="app(data)">Start Searching</button> -->
 
