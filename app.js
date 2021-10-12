@@ -6,9 +6,10 @@ let firstNameInput = document.forms['nameForm']['fname'].value;
 let lastNameInput = document.forms['nameForm']['lname'].value;
 let genderInput = document.forms[ 'nameForm']['gender'].value;
 let dobInput = document.forms['nameForm']['dob'].value;
+let heightInput = document.forms['nameForm']['height'].value;
 
 
-let headers = ['First Name', 'Last Name'];
+let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height'];
 
 baseTableConfiguration(people);
 
@@ -35,7 +36,7 @@ function searchByFirstName(firstNameArray){
     return filteredFirstName;
 }
 
-// Name Search
+// Last Name Search
 function searchByLastName(lastNameArray){
     // Grabbing the values from our nameForm form and inputs.
     lastNameInput = document.forms['nameForm']['lname'].value;
@@ -92,6 +93,23 @@ function searchByDob(dobArray){
       return filteredDob;
 }
 
+// height search
+function searchByHeight(heightArray){
+  heightInput = document.forms[ 'nameForm']['height'].value;
+  let filteredHeight = heightArray.filter(function(person){
+      if(person.height == heightInput){
+          return true;
+      }
+          return false;
+  });
+      if(filteredHeight.length > 0){
+          console.log(filteredHeight);
+      }else{
+          alert('We dont have anybody wanted with that "Height"');
+      }
+      return filteredHeight;
+}
+
 
 // main search function
 
@@ -100,6 +118,8 @@ function mainSearchFunction(){
     lastNameInput = document.forms['nameForm']['lname'].value;
     genderInput = document.forms[ 'nameForm']['gender'].value;
     dobInput = document.forms['nameForm']['dob'].value;
+    heightInput = document.forms[ 'nameForm']['height'].value;
+
 
 
 
@@ -118,8 +138,13 @@ function mainSearchFunction(){
       results = searchByGender(results);
   
       }
+
     if(dobInput.length > 1) {
       results = searchByDob(results);
+    }
+    
+    if(heightInput.length > 1) {
+      results = searchByHeight(results);
     }
 
 

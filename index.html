@@ -15,7 +15,10 @@
       <label for="lname">Gender:</label><br>
       <input type="text" id="gender" name="gender" value=""><br>
       <label for="dob">Date of Birth:</label><br>
-      <input type="text" id="dob" name="dob" value="xx/xx/xxxx"><br>
+      <input type="text" id="dob" name="dob" value=""><br>
+      <label for="dob">Height:</label><br>
+      <input type="text" id="height" name="height" value=""><br>
+  
   
       <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
 
@@ -39,12 +42,14 @@
           let id = row.insertCell(-1);
           let firstName = row.insertCell(0);
           let lastName = row.insertCell(1);
-          let  gender = row.insertCell(2);
+          let gender = row.insertCell(2);
           let dob = row.insertCell(3);
+          let height = row.insertCell(4);
           firstName.innerHTML = document.getElementById("fName").value;
           lastName.innerHTML = document.getElementById("lName").value;
           gender.innerHTML =document.getElementById("gender").value;
-          dob.innerHTML - document.getElementById("dob").value;
+          dob.innerHTML = document.getElementById("dob").value;
+          height.innerHTML = document.getElementById("height").value;
   
           
           return false;
