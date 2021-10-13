@@ -2,10 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Most Wanted</title>
+    <title>Most Wanted List</title>
+
+    <link rel="stylesheet" href="styles.css ">
+
   </head>
-  <body>
-    <header>devCodeCamps Most Wanted List:</header>
+  <body class="body">
+    <section class="hero">
+        <div class="hero-inner">
+    <h1>devCodeCamps Most Wanted List</h1>
+    <header>Search devCodeCamps database:</header><br>
+  </div>
+</section>
     <div>
       <form id="nameForm">
       <label for="fname">First Name:</label><br>
@@ -28,19 +36,15 @@
       <input type="text" id="parents" name="parents" value=""><br>
       <label for="currentspouse">Current Spouse</label><br>
       <input type="text" id="currentspouse" name="currentspouse" value=""><br>
-  
-  
-      <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
+       
+      <button id="search-button" class="form-btn" type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
+      <button id="reset-button" type="reset-button" class="form-btn">Clear Search</button><br><br>
+
 
   </form>
 
-    <table id="filteredTable">
-      <tr>
-        <!-- <th>First Name</th>
-        <th>Last Name</th> -->
-      </tr>
-    </table>
-
+    <table id="filteredTable" class="table">
+      
     <script type="text/javascript">
             
       document.getElementById("submit").onclick=function()
@@ -76,6 +80,7 @@
       }
   
   </script>    
+   </table>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>

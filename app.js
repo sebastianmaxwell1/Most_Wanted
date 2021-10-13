@@ -1,7 +1,5 @@
 "use strict"
 
-
-
 let firstNameInput = document.forms['nameForm']['fname'].value;
 let lastNameInput = document.forms['nameForm']['lname'].value;
 let genderInput = document.forms[ 'nameForm']['gender'].value;
@@ -12,8 +10,6 @@ let eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
 let occupationInput = document.forms[ 'nameForm']['occupation'].value;
 let parentsInput = document.forms[ 'nameForm']['parents'].value;
 let currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
-
-
 
 let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height', 'Weight', 'Eye Color', 'Occupation','Descendants','Current Spouse'];
 
@@ -99,7 +95,7 @@ function searchByDob(dobArray){
       return filteredDob;
 }
 
-// height search
+// Height search
 function searchByHeight(heightArray){
   heightInput = document.forms[ 'nameForm']['height'].value;
   let filteredHeight = heightArray.filter(function(person){
@@ -133,7 +129,7 @@ function searchByWeight(weightArray){
       return filteredWeight;
 }
 
-// eyecolor search
+// Eye Color Search
 function searchByEyecolor(eyeColorArray){
   eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
   let filteredEyecolor = eyeColorArray.filter(function(person){
@@ -150,7 +146,7 @@ function searchByEyecolor(eyeColorArray){
       return filteredEyecolor;
 }
 
-// occupation search
+// Occupation search
 function searchByOccupation(occupationArray){
   occupationInput = document.forms[ 'nameForm']['occupation'].value;
   let filteredOccupation = occupationArray.filter(function(person){
@@ -183,7 +179,7 @@ function searchByParents(parentArray){
       return filteredParents;
 }
 
-// currentspouse search
+// Current Spouse Search
 function searchByCurrentspouse(spouseArray){
   currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
   let filteredCurrentSpouse = spouseArray.filter(function(person){

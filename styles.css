@@ -1,0 +1,57 @@
+.hero {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+ 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-image: url("./Assets/hero.jpg");
+    background-color: black; 
+    height: 400px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+.hero h1 {
+    color: black;
+    background-color: lightslategrey;
+    font-size: 5em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    border-radius: 30rem;
+    padding: 14px;
+}
+
+.hero h2 {
+    color: black;
+    background-color: whitesmoke;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    border-radius:  30rem;
+}
+
+
+.body {
+    background-color: lightslategray;
+}
+
+
+.table {
+    border: solid ; 
+    position:absolute; left:520px; top: 440px;
+    padding: 50;
+    margin: 10;
+    border-left: solid;
+    border-right: solid;
+    text-align:right;      
+    border-collapse:collapse;
+    border-spacing: 0 1px;
+    
+}
