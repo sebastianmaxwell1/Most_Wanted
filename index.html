@@ -12,14 +12,18 @@
       <input type="text" id="fname" name="fname" value=""><br>
       <label for="lname">Last Name:</label><br>
       <input type="text" id="lname" name="lname" value=""><br>
-      <label for="lname">Gender:</label><br>
+      <label for="gender">Gender:</label><br>
       <input type="text" id="gender" name="gender" value=""><br>
       <label for="dob">Date of Birth:</label><br>
       <input type="text" id="dob" name="dob" value=""><br>
-      <label for="dob">Height:</label><br>
+      <label for="height">Height:</label><br>
       <input type="text" id="height" name="height" value=""><br>
-      <label for="dob">Weight:</label><br>
+      <label for="weight">Weight:</label><br>
       <input type="text" id="weight" name="weight" value=""><br>
+      <label for="eyecolor">Eye Color:</label><br>
+      <input type="text" id="eyecolor" name="eyecolor" value=""><br>
+      <label for="occupation">Occupation:</label><br>
+      <input type="text" id="occupation" name="occupation" value=""><br>
   
   
       <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
@@ -48,12 +52,16 @@
           let dob = row.insertCell(3);
           let height = row.insertCell(4);
           let weight = row.insertCell(5);
+          let eyecolor = row.insertCell(6);
+          let occupation = row.insertCell(7);
           firstName.innerHTML = document.getElementById("fName").value;
           lastName.innerHTML = document.getElementById("lName").value;
           gender.innerHTML =document.getElementById("gender").value;
           dob.innerHTML = document.getElementById("dob").value;
           height.innerHTML = document.getElementById("height").value;
           weight.innerHTML = document.getElementById("weight").value;
+          eyecolor.innerHTML = document.getElementById("eyecolor").value;
+          occupation.innerHTML = document.getElementById("occupation").value;
   
           
           return false;

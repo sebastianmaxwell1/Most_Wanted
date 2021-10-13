@@ -8,10 +8,12 @@ let genderInput = document.forms[ 'nameForm']['gender'].value;
 let dobInput = document.forms['nameForm']['dob'].value;
 let heightInput = document.forms['nameForm']['height'].value;
 let weightInput = document.forms[ 'nameForm']['weight'].value;
+let eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
+let occupationInput = document.forms[ 'nameForm']['occupation'].value;
 
 
 
-let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height', 'Weight'];
+let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height', 'Weight', 'Eye Color', 'Occupation'];
 
 baseTableConfiguration(people);
 
@@ -129,6 +131,40 @@ function searchByWeight(weightArray){
       return filteredWeight;
 }
 
+// eyecolor search
+function searchByEyecolor(eyeColorArray){
+  eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
+  let filteredEyecolor = eyeColorArray.filter(function(person){
+      if(person.eyeColor == eyecolorInput){
+          return true;
+      }
+      return false;
+  });
+      if(filteredEyecolor.length > 0){
+          console.log(filteredEyecolor);
+      }else{
+          alert('eye color does not match records!');
+      }
+      return filteredEyecolor;
+}
+
+// occupation search
+function searchByOccupation(occupationArray){
+  occupationInput = document.forms[ 'nameForm']['occupation'].value;
+  let filteredOccupation = occupationArray.filter(function(person){
+      if(person.occupation == occupationInput){
+          return true;
+      }
+      return false;
+  });
+      if(filteredOccupation.length > 0){
+          console.log(filteredOccupation);
+      }else{
+          alert('occupation does not match records');
+      }
+      return filteredOccupation;
+}
+
 
 // main search function
 
@@ -139,6 +175,8 @@ function mainSearchFunction(){
     dobInput = document.forms['nameForm']['dob'].value;
     heightInput = document.forms['nameForm']['height'].value;
     weightInput = document.forms['nameForm']['weight'].value;
+    eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
+    occupationInput = document.forms[ 'nameForm']['occupation'].value;
 
 
 
@@ -169,6 +207,15 @@ function mainSearchFunction(){
     if(weightInput.length > 1) {
       results = searchByWeight(results);
     }
+
+    if(eyecolorInput.length > 1) {
+      results = searchByEyecolor(results);
+
+  }
+  if(occupationInput.length > 1) {
+    results = searchByOccupation(results);
+
+}
 
 
 
