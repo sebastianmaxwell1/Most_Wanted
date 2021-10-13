@@ -24,6 +24,10 @@
       <input type="text" id="eyecolor" name="eyecolor" value=""><br>
       <label for="occupation">Occupation:</label><br>
       <input type="text" id="occupation" name="occupation" value=""><br>
+      <label for="parents">Desendants</label><br>
+      <input type="text" id="parents" name="parents" value=""><br>
+      <label for="currentspouse">Current Spouse</label><br>
+      <input type="text" id="currentspouse" name="currentspouse" value=""><br>
   
   
       <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
@@ -54,6 +58,8 @@
           let weight = row.insertCell(5);
           let eyecolor = row.insertCell(6);
           let occupation = row.insertCell(7);
+          let parents = row.insertCell(8);
+          let currentspouse = row.insertCell(9);
           firstName.innerHTML = document.getElementById("fName").value;
           lastName.innerHTML = document.getElementById("lName").value;
           gender.innerHTML =document.getElementById("gender").value;
@@ -62,6 +68,8 @@
           weight.innerHTML = document.getElementById("weight").value;
           eyecolor.innerHTML = document.getElementById("eyecolor").value;
           occupation.innerHTML = document.getElementById("occupation").value;
+          parents.innerHTML = document.getElementById("parents").value;
+          currentspouse.innerHTML = document.getElementById("currentspouse").value;
   
           
           return false;

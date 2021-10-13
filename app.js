@@ -10,10 +10,12 @@ let heightInput = document.forms['nameForm']['height'].value;
 let weightInput = document.forms[ 'nameForm']['weight'].value;
 let eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
 let occupationInput = document.forms[ 'nameForm']['occupation'].value;
+let parentsInput = document.forms[ 'nameForm']['parents'].value;
+let currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
 
 
 
-let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height', 'Weight', 'Eye Color', 'Occupation'];
+let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height', 'Weight', 'Eye Color', 'Occupation','Descendants','Current Spouse'];
 
 baseTableConfiguration(people);
 
@@ -92,7 +94,7 @@ function searchByDob(dobArray){
       if(filteredDob.length > 0){
           console.log(filteredDob);
       }else{
-         alert('Nobody with that date of birth found. Please enter another birthdate.');
+         alert(`Our records does not indicate a person with the ${dobInput} birthdate. Please enter in XX/XX/XXXX format or try again.`);
       }
       return filteredDob;
 }
@@ -109,7 +111,7 @@ function searchByHeight(heightArray){
       if(filteredHeight.length > 0){
           console.log(filteredHeight);
       }else{
-          alert('We dont have anybody wanted with that "Height"');
+          alert(`We dont have anybody wanted measured at ${heightInput} inches. Please enter another height.`);
       }
       return filteredHeight;
 }
@@ -126,7 +128,7 @@ function searchByWeight(weightArray){
       if(filteredWeight.length > 0){
         console.log(filteredWeight);
       }else{
-        alert('We do not have anybody wanted with that "Weight"');
+        alert(`'We do not have anybody wanted with the weighing ${weightInput}. Please enter another weight in lbs.`);
       }
       return filteredWeight;
 }
@@ -143,7 +145,7 @@ function searchByEyecolor(eyeColorArray){
       if(filteredEyecolor.length > 0){
           console.log(filteredEyecolor);
       }else{
-          alert('eye color does not match records!');
+          alert(`Our records do not indicate anyone with ${eyecolorInput} eyes. Please check your spelling or try another Eye Color.`);
       }
       return filteredEyecolor;
 }
@@ -160,9 +162,42 @@ function searchByOccupation(occupationArray){
       if(filteredOccupation.length > 0){
           console.log(filteredOccupation);
       }else{
-          alert('occupation does not match records');
+          alert(`No ${occupationInput} is recorded in our Wanted List. Please check your spelling or try another Occupation.`);
       }
       return filteredOccupation;
+}
+// Parents search
+function searchByParents(parentArray){
+  parentsInput = document.forms[ 'nameForm']['parents'].value;
+  let filteredParents = parentArray.filter(function(person){
+      if(person.parents == parentsInput){
+          return true;
+      }
+      return false;
+  });
+      if(filteredParents.length > 0){
+          console.log(filteredParents);
+      }else{
+         alert('No Desendants matched our Wanted List');
+      }
+      return filteredParents;
+}
+
+// currentspouse search
+function searchByCurrentspouse(spouseArray){
+  currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
+  let filteredCurrentSpouse = spouseArray.filter(function(person){
+      if(person.currentSpouse == currentSpouseInput){
+          return true;
+      }
+      return false;
+  });
+      if(filteredCurrentSpouse.length > 0){
+          console.log(filteredCurrentSpouse);
+      }else{
+          alert('No Current Spouses matched our Wanted List');
+      }
+      return filteredCurrentSpouse;
 }
 
 
@@ -177,6 +212,8 @@ function mainSearchFunction(){
     weightInput = document.forms['nameForm']['weight'].value;
     eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
     occupationInput = document.forms[ 'nameForm']['occupation'].value;
+    parentsInput = document.forms[ 'nameForm']['parents'].value;
+    currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
 
 
 
@@ -215,6 +252,14 @@ function mainSearchFunction(){
   if(occupationInput.length > 1) {
     results = searchByOccupation(results);
 
+}
+if(parentsInput.length > 1) {
+  results = searchByParents(results);
+
+}
+
+if(currentSpouseInput.length > 1) {
+  results = searchByCurrentspouse(results);
 }
 
 
