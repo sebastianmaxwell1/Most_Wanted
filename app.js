@@ -7,9 +7,11 @@ let lastNameInput = document.forms['nameForm']['lname'].value;
 let genderInput = document.forms[ 'nameForm']['gender'].value;
 let dobInput = document.forms['nameForm']['dob'].value;
 let heightInput = document.forms['nameForm']['height'].value;
+let weightInput = document.forms[ 'nameForm']['weight'].value;
 
 
-let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height'];
+
+let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height', 'Weight'];
 
 baseTableConfiguration(people);
 
@@ -110,6 +112,23 @@ function searchByHeight(heightArray){
       return filteredHeight;
 }
 
+// Weight Search
+function searchByWeight(weightArray){
+  weightInput = document.forms[ 'nameForm']['weight'].value;
+  let filteredWeight = weightArray.filter(function(person){
+      if(person.weight == weightInput){
+          return true;
+    }
+          return false;
+  });
+      if(filteredWeight.length > 0){
+        console.log(filteredWeight);
+      }else{
+        alert('We do not have anybody wanted with that "Weight"');
+      }
+      return filteredWeight;
+}
+
 
 // main search function
 
@@ -118,7 +137,8 @@ function mainSearchFunction(){
     lastNameInput = document.forms['nameForm']['lname'].value;
     genderInput = document.forms[ 'nameForm']['gender'].value;
     dobInput = document.forms['nameForm']['dob'].value;
-    heightInput = document.forms[ 'nameForm']['height'].value;
+    heightInput = document.forms['nameForm']['height'].value;
+    weightInput = document.forms['nameForm']['weight'].value;
 
 
 
@@ -146,6 +166,10 @@ function mainSearchFunction(){
     if(heightInput.length > 1) {
       results = searchByHeight(results);
     }
+    if(weightInput.length > 1) {
+      results = searchByWeight(results);
+    }
+
 
 
     console.log(results);

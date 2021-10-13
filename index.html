@@ -5,7 +5,7 @@
     <title>Most Wanted</title>
   </head>
   <body>
-    <header>devCodeCamps Most Wanted List</header>
+    <header>devCodeCamps Most Wanted List:</header>
     <div>
       <form id="nameForm">
       <label for="fname">First Name:</label><br>
@@ -18,6 +18,8 @@
       <input type="text" id="dob" name="dob" value=""><br>
       <label for="dob">Height:</label><br>
       <input type="text" id="height" name="height" value=""><br>
+      <label for="dob">Weight:</label><br>
+      <input type="text" id="weight" name="weight" value=""><br>
   
   
       <button type="button" onclick="mainSearchFunction()">Search Most Wanted</button>
@@ -45,11 +47,13 @@
           let gender = row.insertCell(2);
           let dob = row.insertCell(3);
           let height = row.insertCell(4);
+          let weight = row.insertCell(5);
           firstName.innerHTML = document.getElementById("fName").value;
           lastName.innerHTML = document.getElementById("lName").value;
           gender.innerHTML =document.getElementById("gender").value;
           dob.innerHTML = document.getElementById("dob").value;
           height.innerHTML = document.getElementById("height").value;
+          weight.innerHTML = document.getElementById("weight").value;
   
           
           return false;
