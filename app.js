@@ -11,7 +11,7 @@ let occupationInput = document.forms[ 'nameForm']['occupation'].value;
 let parentsInput = document.forms[ 'nameForm']['parents'].value;
 let currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
 
-let headers = ['ID', 'First Name', 'Last Name', 'Gender','DOB', 'Height', 'Weight', 'Eye Color', 'Occupation','Descendants','Current Spouse'];
+let headers = ['ID', 'First', 'Last', 'Gender','DOB', 'Height', 'Weight', 'Eye Color', 'Occupation','Descendants','Current Spouse'];
 
 baseTableConfiguration(people);
 
