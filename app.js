@@ -22,7 +22,7 @@ function searchByFirstName(firstNameArray){
 
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
     let filteredFirstName = firstNameArray.filter(function (person) {
-        if(person.firstName === firstNameInput){
+        if(person.firstName.toLowerCase() === firstNameInput.toLowerCase()){
             return true;
         }
         return false;
@@ -44,7 +44,7 @@ function searchByLastName(lastNameArray){
     lastNameInput = document.forms['nameForm']['lname'].value;
 
     let filteredLastName = lastNameArray.filter(function (person) {
-        if(person.lastName === lastNameInput){
+        if(person.lastName.toLowerCase() === lastNameInput.toLowerCase()){
             return true;
         }
         return false;
@@ -64,7 +64,7 @@ function searchByLastName(lastNameArray){
 function searchByGender(filteredGenderArray){
   genderInput = document.forms[ 'nameForm']['gender'].value;
   let filteredGender = filteredGenderArray.filter(function(person) {
-      if(person.gender == genderInput){
+      if(person.gender.toLowerCase() == genderInput.toLowerCase()){
           return true;
       }
       return false;
@@ -133,7 +133,7 @@ function searchByWeight(weightArray){
 function searchByEyecolor(eyeColorArray){
   eyecolorInput = document.forms[ 'nameForm']['eyecolor'].value;
   let filteredEyecolor = eyeColorArray.filter(function(person){
-      if(person.eyeColor == eyecolorInput){
+      if(person.eyeColor.toLowerCase() == eyecolorInput.toLowerCase()){
           return true;
       }
       return false;
@@ -150,7 +150,7 @@ function searchByEyecolor(eyeColorArray){
 function searchByOccupation(occupationArray){
   occupationInput = document.forms[ 'nameForm']['occupation'].value;
   let filteredOccupation = occupationArray.filter(function(person){
-      if(person.occupation == occupationInput){
+      if(person.occupation.toLowerCase() == occupationInput.toLowerCase()){
           return true;
       }
       return false;
@@ -166,7 +166,7 @@ function searchByOccupation(occupationArray){
 function searchByParents(parentArray){
   parentsInput = document.forms[ 'nameForm']['parents'].value;
   let filteredParents = parentArray.filter(function(person){
-      if(person.parents == parentsInput){
+      if(person.parents.toLowerCase() == parentsInput.toLowerCase()){
           return true;
       }
       return false;
@@ -183,7 +183,7 @@ function searchByParents(parentArray){
 function searchByCurrentspouse(spouseArray){
   currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
   let filteredCurrentSpouse = spouseArray.filter(function(person){
-      if(person.currentSpouse == currentSpouseInput){
+      if(person.currentSpouse.toLowerCase() == currentSpouseInput.toLowerCase()){
           return true;
       }
       return false;
