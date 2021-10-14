@@ -1,5 +1,6 @@
 "use strict"
 
+let wantedIdInput = document.forms['nameForm']['wantedId'].value
 let firstNameInput = document.forms['nameForm']['fname'].value;
 let lastNameInput = document.forms['nameForm']['lname'].value;
 let genderInput = document.forms[ 'nameForm']['gender'].value;
@@ -14,6 +15,29 @@ let currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
 let headers = ['ID', 'First', 'Last', 'Gender','DOB', 'Height', 'Weight', 'Eye Color', 'Occupation','Descendants','Current Spouse'];
 
 baseTableConfiguration(people);
+
+// ID Search
+
+function searchById(idArray){
+
+    wantedIdInput = document.forms['nameForm']['wantedId'].value;
+
+    let filteredId = idArray.filter(function(person) {
+        if(person.id == wantedIdInput){
+            return true;
+        }
+        return false;
+    });
+
+    if(filteredId.length > 0){
+        console.log(filteredId);
+
+    }else{
+        alert('Sorry, looks like there is no one with that Id.');
+    }
+    return filteredId;
+}
+
 
 // Name Search
 function searchByFirstName(firstNameArray){
@@ -166,7 +190,7 @@ function searchByOccupation(occupationArray){
 function searchByParents(parentArray){
   parentsInput = document.forms[ 'nameForm']['parents'].value;
   let filteredParents = parentArray.filter(function(person){
-      if(person.parents.toLowerCase() == parentsInput.toLowerCase()){
+      if(person.parents == parentsInput || person.id == wantedIdInput){
           return true;
       }
       return false;
@@ -200,6 +224,8 @@ function searchByCurrentspouse(spouseArray){
 // main search function
 
 function mainSearchFunction(){
+
+    wantedIdInput = document.forms['nameForm']['wantedId'].value;
     firstNameInput = document.forms['nameForm']['fname'].value;
     lastNameInput = document.forms['nameForm']['lname'].value;
     genderInput = document.forms[ 'nameForm']['gender'].value;
@@ -210,11 +236,16 @@ function mainSearchFunction(){
     occupationInput = document.forms[ 'nameForm']['occupation'].value;
     parentsInput = document.forms[ 'nameForm']['parents'].value;
     currentSpouseInput = document.forms[ 'nameForm']['currentspouse'].value;
+   
 
 
 
 
     let results = people;
+
+    if(wantedIdInput.length > 1) {
+        results = searchById(results);
+      }
 
     if(firstNameInput.length > 1){
         results = searchByFirstName(results);
@@ -244,19 +275,19 @@ function mainSearchFunction(){
     if(eyecolorInput.length > 1) {
       results = searchByEyecolor(results);
 
-  }
-  if(occupationInput.length > 1) {
+    }
+    if(occupationInput.length > 1) {
     results = searchByOccupation(results);
 
-}
-if(parentsInput.length > 1) {
+    }
+    if(parentsInput.length > 1) {
   results = searchByParents(results);
 
-}
+    }
 
-if(currentSpouseInput.length > 1) {
+    if(currentSpouseInput.length > 1) {
   results = searchByCurrentspouse(results);
-}
+    }
 
 
 

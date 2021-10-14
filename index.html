@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Most Wanted List</title>
 
     <link rel="stylesheet" href="styles.css ">
+    
 
   </head>
   <body class="body">
@@ -17,6 +19,8 @@
       <label class="formTitle">Search devCodeCamps Most Wanted:</label>
 
       <form id="nameForm" class="nameForm">
+      <label for="wantedId">ID #:</label><br>
+      <input type="text" id="wantedId" name="wantedId" value=""><br>
       <label for="fname">First Name:</label><br>
       <input type="text" id="fname" name="fname" value=""><br>
       <label for="lname">Last Name:</label><br>
@@ -65,6 +69,7 @@
           let occupation = row.insertCell(7);
           let parents = row.insertCell(8);
           let currentspouse = row.insertCell(9);
+          id.innerHTML = document.getElementById("wantedId").value;
           firstName.innerHTML = document.getElementById("fName").value;
           lastName.innerHTML = document.getElementById("lName").value;
           gender.innerHTML =document.getElementById("gender").value;
@@ -87,6 +92,4 @@
   </body>
 </html>
 
-
-    <!-- <button onclick="app(data)">Start Searching</button> -->
 
